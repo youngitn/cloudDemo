@@ -1,0 +1,20 @@
+spring:
+  config:
+#  只取application下的K/V
+    import: 'consul:localhost:8500/config/cloud-demo;/config/application;/config/xxx'
+#    只取cloud-demo的K/V
+#    import: 'consul:localhost:8500/config/cloud-demo'
+#    以下為簡寫,下面就不去限制 key/value的路徑,但要注意application.name=XXXX
+#    import: 'consul:'
+  cloud:
+    consul:
+      config:
+        fail-fast: true
+        prefixes: 'config'
+#        defaultContext: 'application'
+      host: localhost
+      port: 8500
+  application:
+    name: cloud-demo
+
+

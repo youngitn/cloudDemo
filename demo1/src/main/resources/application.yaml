@@ -1,0 +1,22 @@
+spring:
+  config:
+    #  ??application??K/V
+    import: 'consul:localhost:8500/config/cloud-demo;/config/application;/config/xxx;/config/demo1'
+  #    ??cloud-demo?K/V
+  #    import: 'consul:localhost:8500/config/cloud-demo'
+  #    ?????,??????? key/value???,????application.name=XXXX
+  #    import: 'consul:'
+  cloud:
+    consul:
+      config:
+        fail-fast: true
+        prefixes: 'config'
+      #        defaultContext: 'application'
+      host: localhost
+      port: 8500
+  application:
+    name: demo1
+  server:
+    port: ${demo1.server.port}
+
+
