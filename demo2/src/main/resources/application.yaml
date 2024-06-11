@@ -1,11 +1,11 @@
 spring:
 
   config:
-    #  ??application??K/V
+    #  只取application下的K/V
    # import: 'consul:localhost:8500/config/cloud-demo;/config/application;/config/xxx'
-  #    ??cloud-demo?K/V
+  #    只取cloud-demo的K/V
   #    import: 'consul:localhost:8500/config/cloud-demo'
-  #    ?????,??????? key/value???,????application.name=XXXX
+  #    以下為簡寫,下面就不去限制 key/value的路徑,但要注意application.name=XXXX
       import: 'consul:'
   cloud:
     consul:
